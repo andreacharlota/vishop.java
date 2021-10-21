@@ -1,0 +1,105 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.util.UUID;
+
+import sun.security.util.Length;
+
+public class vishop {
+	private static final String Data1 = null;
+	Scanner scan = new Scanner(System.in);
+
+	public static int countWordsUsingSplit(String input) { // menggunakan split();
+		if (input == null || input.isEmpty()) { 
+		return 0;
+	
+		}String[] words = input.split("\\s+");	
+		return words.length; 
+	}
+	
+	public void shopVi() {
+		String name;
+		System.out.println("Welcome to Vi Shop! ^-^");
+		System.out.println("To create an order, please input your name.");
+		
+		do{
+			System.out.print("Name [Min. 3 characters | Must contain two words]: ");
+			name = scan.nextLine();
+			
+		if(countWordsUsingSplit(name) == 2) {
+			break;
+		}else{
+			System.out.println("Name must be two words!");
+	}	
+		}while(countWordsUsingSplit(name)<2 || (countWordsUsingSplit(name)>2));
+	}
+    public void shippingVi() {
+        int choose; // pick
+        int qtty; // quantity
+        
+        int Product;
+		if(Product = 0) {
+        	System.out.println("Sorry, all of our products are currently out of stock!");
+        }else{
+        do{
+            System.out.print("Pick Product to Buy [1..9]: ");
+            choose = scan.nextInt(); scan.nextLine();
+        }while(choose < 1 || choose > 9);
+        do{
+            System.out.println("Input Quantity [1..10]: " );
+            qtty = scan.nextInt(); scan.nextLine();
+            System.out.println("Insufficient Product Stock. Maximum Purchase of This Product is Only 10.");
+        }while(qtty < 1 || qtty > 10);
+     }
+ }
+    public void viewVi() {
+ 
+    }
+    void viewHistory() {
+    	String s1;
+    	for(shipping s1 = Data1) {
+			if(s1 instanceof shipping) {
+    			System.out.println(s1.getClass());
+    			System.out.println(s1.getShippingID());
+    			System.out.println(s1.getStatus());
+    			System.out.println(s1.getItems());
+    		}else{
+    			System.out.println("No purchase history.\n");
+    		}
+			
+       	System.out.println("Finished Orders\n");
+       	System.out.println("================\n");
+ 
+private void Product() {		
+}
+		void Menu() {
+		int menu;
+		do{
+			System.out.println("No purchase history.\n");
+			System.out.println("Hello, Britney Lave!");
+			System.out.println("1. Shop at Vi");
+			System.out.println("2. Refresh My Shiping Status");
+			System.out.println("3. View Purchase History");
+			System.out.println("4. Exit");
+			System.out.print(">> ");
+			menu = scan.nextInt(); scan.nextLine();
+			switch(menu){
+			case 1:
+				shopVi();
+				break;
+			case 2 :
+				shippingVi();
+				break;
+			case 3:
+				viewVi();
+				break;
+			case 4:
+				break; //exit
+			default:
+				break;
+			}
+		}while(menu!=4);
+	}
+	public static void main(String[] args) {
+	 	new vishop();
+}
+	}
